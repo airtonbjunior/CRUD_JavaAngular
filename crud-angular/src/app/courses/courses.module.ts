@@ -3,9 +3,10 @@ import { CommonModule } from '@angular/common';
 
 import { CoursesRoutingModule } from './courses-routing.module';
 import { CoursesComponent } from './courses/courses.component';
-import { MatTableModule } from '@angular/material/table'
-import { MatCardModule } from '@angular/material/card'
-import { MatToolbarModule } from '@angular/material/toolbar'
+
+// The AppMaterialModule contains all external components used by this application modules
+// Idea by Loiane Groner
+import { AppMaterialModule } from '../shared/app-material/app-material.module';
 
 @NgModule({
   declarations: [
@@ -14,9 +15,7 @@ import { MatToolbarModule } from '@angular/material/toolbar'
   imports: [
     CommonModule,
     CoursesRoutingModule,
-    MatTableModule,
-    MatCardModule,
-    MatToolbarModule
+    AppMaterialModule
   ]
 })
 export class CoursesModule { }
