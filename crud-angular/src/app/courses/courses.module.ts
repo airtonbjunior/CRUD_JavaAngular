@@ -5,7 +5,7 @@ import { CoursesRoutingModule } from './courses-routing.module';
 import { CoursesComponent } from './courses/courses.component';
 
 // The AppMaterialModule contains all external components used by this application modules
-// Idea by Loiane Groner
+// Idea: Loiane Groner
 import { AppMaterialModule } from '../shared/app-material/app-material.module';
 
 @NgModule({

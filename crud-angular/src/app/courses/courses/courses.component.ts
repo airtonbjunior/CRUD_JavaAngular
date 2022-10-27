@@ -1,3 +1,5 @@
+import { Observable } from 'rxjs';
+import { CoursesService } from './../services/courses.service';
 import { Course } from './../model/course';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,19 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CoursesComponent implements OnInit {
 
-  // array to use as datasource - testing the table component (angular material)
-  courses: Course[] = [
-    {
-      _id: '1',
-      name: 'Angular',
-      category: 'Frontend'
-    }
-  ];
+  courses: Observable<Course[]>;
   displayedColumns = ['name', 'category']; // wich columns i'll display
 
-  constructor() { }
+  // Dependecy injection
+  constructor(private coursesService: CoursesService) {
+    this.courses = this.coursesService.list();
+  }
 
   ngOnInit(): void {
+
   }
 
 }
