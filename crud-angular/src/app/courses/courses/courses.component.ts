@@ -10,12 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CoursesComponent implements OnInit {
 
-  courses: Observable<Course[]>;
+  courses$: Observable<Course[]>; // the $ at the variable name is a notation used in Observables
   displayedColumns = ['name', 'category']; // wich columns i'll display
 
   // Dependecy injection
   constructor(private coursesService: CoursesService) {
-    this.courses = this.coursesService.list();
+    this.courses$ = this.coursesService.list();
   }
 
   ngOnInit(): void {
