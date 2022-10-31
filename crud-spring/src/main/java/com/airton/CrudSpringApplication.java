@@ -24,8 +24,8 @@ public class CrudSpringApplication {
 			c.setName("Angular com Spring"); // Verificar esse erro aqui. Os setters (e getters) estão sendo gerados pelo Lombok
 			c.setCategory("front-end");
 			
-			courseRepository.save(new Course(c));
-		}
+			courseRepository.save(c);
+		};
 	}
 
 }
